@@ -3,7 +3,7 @@
 <view class='container'>
     <!-- 头部 -->
     <view class='nav'>
-        <view class='loc'>成都
+        <view class='loc' bindtap='map'>成都
             <view></view>
         </view>
         <view class='nav_item' bindtap='target'>正在上映</view>
