@@ -183,14 +183,14 @@
 .xscroll {
     white-space: nowrap;
     width: 750rpx;
-    height: 400rpx;
+    height: 450rpx;
     /* background-color: pink; */
     border-bottom: 20rpx solid rgb(216, 216, 216);
 }
 
 .scroll-item {
     width: 216rpx;
-    height: 380rpx;
+    height: 420rpx;
     display: inline-block;
     margin-top: 10rpx;
     margin-left: 20rpx;
@@ -210,17 +210,17 @@
 
 .sbox {
     width: 216rpx;
-    height: 260rpx;
+    height: 308rpx;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 .scroll-item image {
     width: 216rpx;
-    height: 302rpx;
+    height: 308rpx;
 }
 
 /* 电影栏 */
