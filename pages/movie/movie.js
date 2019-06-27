@@ -6,9 +6,9 @@ Page({
    */
   data: {
     imgUrls: [
-      'https://dwz.cn/mrNAnuQi',
-      'https://dwz.cn/gvDL4FS7',
-      'https://dwz.cn/gHL7PlJf',
+      '../../imgs/roll1.png',
+      '../../imgs/roll2.png',
+      '../../imgs/roll3.png',
     ],
 
     banner: [{
@@ -76,12 +76,13 @@ Page({
       score: "9.2",
       img: "../../imgs/mpic08.png"
     }],
-
-
-
-
   },
 
+  target: function() {
+    wx.navigateTo({
+      url: '../movie2/movie2',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

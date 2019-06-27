@@ -42,12 +42,22 @@
   margin-top: 5rpx;
 }
 
-.nav_item {
+.nav_item2 {
   width: 135rpx;
   height: 95rpx;
   text-align: center;
   line-height: 100rpx;
   font-size: 30rpx;
+  /* background-color: yellow; *//* border-bottom: 5rpx solid rgb(239, 67, 40); */
+}
+
+.nav_item1 {
+  width: 135rpx;
+  height: 95rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: rgb(239, 67, 40);
   /* background-color: yellow; */
   border-bottom: 5rpx solid rgb(239, 67, 40);
 }

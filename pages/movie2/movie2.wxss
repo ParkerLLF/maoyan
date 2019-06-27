@@ -1,4 +1,5 @@
 /* pages/movie2/movie2.wxss */
+
 /* pages/movie/movie.wxss */
 
 .container {
@@ -49,6 +50,16 @@
   text-align: center;
   line-height: 100rpx;
   font-size: 30rpx;
+  /* background-color: yellow; *//* border-bottom: 5rpx solid rgb(239, 67, 40); */
+}
+
+.nav_item2 {
+  width: 135rpx;
+  height: 95rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: rgb(239, 67, 40);
   /* background-color: yellow; */
   border-bottom: 5rpx solid rgb(239, 67, 40);
 }
@@ -158,6 +169,53 @@
   height: 120rpx;
   border-radius: 60rpx;
 }
+
+/* 横向滑动栏 */
+
+.xscroll {
+  width: 750rpx;
+  height: 500rpx;
+  white-space: nowrap;
+  background-color: pink;
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.hy {
+  margin-left: 20rpx;
+}
+
+.hy .text {
+  width: 300rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  background-color: yellow;
+}
+
+.sbox {
+  width: 750rpx;
+  height: 350rpx;
+  padding: 20rpx;
+}
+
+.sbox .scorll-item {
+  background: red;
+  width: 120px;
+  height: 200px;
+  display: inline-block;
+  /* display: flex; */
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.scorll-item image {
+  width: 180rpx;
+  height: 252rpx;
+}
+
+/* 电影栏 */
 
 .movies {
   width: 700rpx;

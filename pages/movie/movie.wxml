@@ -5,8 +5,8 @@
     <view class='loc'>成都
       <view></view>
     </view>
-    <view class='nav_item'>正在上映</view>
-    <view class='nav_item'>即将上映</view>
+    <view class='nav_item1' >正在上映</view>
+    <view class='nav_item2' bindtap='target'>即将上映</view>
     <view class='search'></view>
   </view>
 
