@@ -11,16 +11,17 @@ app.get("/img", function (req, res) {
 
     //1，创建一个connection
     var connection = mysql.createConnection({
-        host: 'cdb-a9y1iffo.cd.tencentcdb.com', //主机 ip
-        user: 'root', //MySQL认证用户名
-        password: 'cdhq1234', //MySQL认证用户密码
-        port: '10055', //端口号
-        database: 'express' //数据库里面的数据
+        host: 'cdb-a9y1iffo.cd.tencentcdb.com',     //主机 ip
+        user: 'root',                               //MySQL认证用户名
+        password: 'cdhq1234',                       //MySQL认证用户密码
+        port: '10055',                              //端口号
+        database: 'express'                         //数据库里面的数据
     });
 
     //2,连接
     connection.connect();
-    //3,编写sql语句
+
+    //3,编写sql语句  获取数据
     // var sql = 'SELECT * FROM users';
     var sql = 'select * from imgUrls'
 
@@ -41,11 +42,12 @@ app.get("/img", function (req, res) {
         let data = JSON.stringify(result);
         res.end(data);
     });
+
     //5,连接结束
     connection.end();
 });
 
-//4,进行监听
+//6,进行监听
 app.listen(8890, function () {
     console.log('数据库连接 imgUrls.js启动');
 });
