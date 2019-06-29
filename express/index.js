@@ -82,4 +82,7 @@ app.get('/get', function (req, res) {
 
 
 //进行监听
-app.listen(8888);
+// app.listen(8888);
+app.listen(8888, function () {
+    console.log('index.js 模拟服务器启动');
+});

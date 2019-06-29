@@ -26,4 +26,7 @@ app.get('/get', function (req, res) {
 
 
 //进行监听
-app.listen(8890);
+// app.listen(8890);
+app.listen(8890, function () {
+    console.log('imgUrls.js 模拟服务器启动');
+});

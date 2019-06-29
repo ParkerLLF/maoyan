@@ -35,4 +35,7 @@ app.get('/get', function (req, res) {
 
 
 //进行监听
-app.listen(8889);
+// app.listen(8889);
+app.listen(8889, function () {
+    console.log('banner.js 模拟服务器启动');
+});
