@@ -23,7 +23,7 @@ Page({
         let that = this;
         // 获取list数据
         wx.request({
-            url: 'http://localhost:8888/get',
+            url: 'http://localhost:8888/list',
             success(res) {
                 //将获取的数据传给'row'
                 row = res.data;
@@ -48,7 +48,7 @@ Page({
 
         // 获取banner数据
         wx.request({
-            url: 'http://localhost:8889/get',
+            url: 'http://localhost:8889/banner',
             success(res) {
                 console.log("-----------获取banner数据---------");
                 ban = res.data;
@@ -61,7 +61,7 @@ Page({
 
         // 获取轮播图数据
         wx.request({
-            url: 'http://localhost:8890/get',
+            url: 'http://localhost:8890/img',
             success(res) {
                 console.log("-----------获取轮播图数据---------");
                 imgu = res.data;

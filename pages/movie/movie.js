@@ -4,10 +4,9 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
-    },
+    data: {},
 
-    target: function () {
+    target: function() {
         wx.navigateTo({
             url: '../movie2/movie2',
         })
@@ -16,14 +15,14 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
         let row;
         let ban;
         let imgu;
         let that = this;
         // 获取list数据
         wx.request({
-            url: 'http://localhost:8888/get',
+            url: 'http://localhost:8888/list',
             success(res) {
                 //将获取的数据传给'row'
                 console.log("通过res获取数据 并将获取的数据传给'row'")
@@ -47,80 +46,126 @@ Page({
         });
 
         console.log("-----------获取banner数据---------");
+
         // 获取banner数据
         wx.request({
-            url: 'http://localhost:8889/get',
+            url: 'http://localhost:8889/banner',
             success(res) {
                 console.log("-----------获取banner数据---------");
                 ban = res.data;
                 console.log(ban)
-                that.setData ({
-                    banner :ban,
+                that.setData({
+                    banner: ban,
                 })
             }
         })
         // 获取轮播图数据
         wx.request({
-            url: 'http://localhost:8890/get',
-           success(res){
-               console.log("-----------获取轮播图数据---------");
-               imgu = res.data;
-               console.log(imgu)
-               that.setData({
-                   imgUrls : imgu,
-               })
-           }
+            url: 'http://localhost:8890/img',
+            success(res) {
+                console.log("-----------获取轮播图数据---------");
+                imgu = res.data;
+                console.log(imgu)
+                that.setData({
+                    imgUrls: imgu,
+                })
+            }
         })
-
-
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function () {
+    onHide: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function () {
+    onUnload: function() {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
+    onPullDownRefresh: function() {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function () {
+    onReachBottom: function() {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage: function() {
 
     }
 })
