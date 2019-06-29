@@ -5,103 +5,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        imgUrls: [
-            '../../imgs/roll1.png',
-            '../../imgs/roll2.png',
-            '../../imgs/roll3.png',
-        ],
-
-        banner: [{
-                name: "0元看电影",
-                img: "../../imgs/bpic01.png"
-            }, {
-                name: "签到必领券",
-                img: "../../imgs/bpic02.png"
-            }, {
-                name: "赢PS4",
-                img: "../../imgs/bpic03.png"
-            }, {
-                name: "开心麻花",
-                img: "../../imgs/bpic04.png"
-            },
-
-        ],
-
-        list: [{
-            name: "扫毒",
-            score: "8.6",
-            img: "../../imgs/mpic01.png",
-            date: "7月5日"
-        }, {
-            name: "绝杀慕尼黑",
-            score: "9.6",
-            img: "../../imgs/mpic02.png",
-            date: "7月5日"
-        }, {
-            name: "哥斯拉2",
-            score: "8.4",
-            img: "../../imgs/mpic03.png"
-
-        }, {
-            name: "最好的我们",
-            score: "8.4",
-            img: "../../imgs/mpic04.png"
-        }, {
-            name: "蜘蛛侠：英雄远征",
-            score: "9.5",
-            img: "../../imgs/mpic05.png"
-        }, {
-            name: "千与千寻",
-            score: "9.4",
-            img: "../../imgs/mpic06.png"
-        }, {
-            name: "黑衣人：全球通缉",
-            score: "7.8",
-            img: "../../imgs/mpic07.png"
-        }, {
-            name: "玩具总动员4",
-            score: "9.2",
-            img: "../../imgs/mpic08.png"
-        }, {
-            name: "黑衣人：全球通缉",
-            score: "7.8",
-            img: "../../imgs/mpic07.png"
-        }, {
-            name: "玩具总动员4",
-            score: "9.2",
-            img: "../../imgs/mpic08.png"
-        }, {
-            name: "黑衣人：全球通缉",
-            score: "7.8",
-            img: "../../imgs/mpic07.png"
-        }, {
-            name: "玩具总动员4",
-            score: "9.2",
-            img: "../../imgs/mpic08.png"
-        }],
-
-        wonderful: [{
-                name: "李云迪",
-                user: "钢琴演奏会",
-                img: "../../imgs/bpic01"
-            },
-            {
-                name: "爱有引力",
-                user: "超感体验展",
-                img: "../../imgs/bpic01"
-            },
-            {
-                name: "蔡琴",
-                user: "温柔发声",
-                img: "../../imgs/bpic01"
-            }
-
-        ]
-
-
     },
 
-    target: function() {
+    target: function () {
         wx.navigateTo({
             url: '../movie2/movie2',
         })
@@ -110,56 +16,111 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function (options) {
+        let row;
+        let ban;
+        let imgu;
+        let that = this;
+        // 获取list数据
+        wx.request({
+            url: 'http://localhost:8888/get',
+            success(res) {
+                //将获取的数据传给'row'
+                console.log("通过res获取数据 并将获取的数据传给'row'")
+                row = res.data;
+                console.log("----------输出所有数据----------");
+                console.log(row);
+                console.log("----------根据数组下标输出具体的一组数据----------");
+                console.log(row[0])
+                console.log("----------输出一组数据中的具体项----------");
+                console.log(row[0].name);
+                console.log(row[0].score);
+                console.log(row[0].img);
+                console.log(row[0].date);
+                console.log("----------------------------------------");
+                that.setData({
+                    list: row,
+                });
+                console.log("----------输出----------");
+                console.log("---------bottom---------");
+            }
+        });
+
+        console.log("-----------获取banner数据---------");
+        // 获取banner数据
+        wx.request({
+            url: 'http://localhost:8889/get',
+            success(res) {
+                console.log("-----------获取banner数据---------");
+                ban = res.data;
+                console.log(ban)
+                that.setData ({
+                    banner :ban,
+                })
+            }
+        })
+        // 获取轮播图数据
+        wx.request({
+            url: 'http://localhost:8890/get',
+           success(res){
+               console.log("-----------获取轮播图数据---------");
+               imgu = res.data;
+               console.log(imgu)
+               that.setData({
+                   imgUrls : imgu,
+               })
+           }
+        })
+
 
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function() {
+    onReady: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {
+    onShow: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function() {
+    onHide: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function() {
+    onUnload: function () {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function() {
+    onPullDownRefresh: function () {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function() {
+    onReachBottom: function () {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function() {
+    onShareAppMessage: function () {
 
     }
 })
